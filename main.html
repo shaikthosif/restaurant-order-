@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <title>Main Page</title>
+    <style>
+        * {
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+
+        }
+
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+        }
+
+        #main {
+            height: 100%;
+            width: 100%;
+
+        }
+
+        #header {
+            height: 20%;
+            width: 100%;
+            background-color: rgb(219, 219, 224);
+            position: fixed;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #logo {
+            height: 70%;
+            margin: 0 10px;
+
+        }
+
+        #logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 2px;
+        }
+        #header .text,#search{
+            display: flex;
+
+        }
+
+
+        button {
+            padding: 10px 25px;
+            background-color: rgb(9, 182, 153);
+            border: 4px solid black;
+            border-radius: 9px;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            border: 4px solid rgb(154, 154, 223);
+        }
+
+        #fackheader {
+            height: 20%;
+            width: 100%;
+        }
+
+        #nav nav {
+            height: 5%;
+            width: 100%;
+            background-color: rgb(9, 182, 153);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+
+
+        }
+
+        #nav a {
+            text-decoration: none;
+        }
+
+        #nav a:hover {
+            text-decoration: underline;
+        }
+
+
+        #nonveg {
+            height: 75%;
+            width: 100%;
+            background-color: black;
+            display: flex;
+            align-items: center;
+        }
+
+
+        .box {
+            border: 2px solid black;
+
+            height: 300px;
+            width: 190px;
+            border-radius: 20px;
+
+            background-color: rgb(196, 223, 247);
+            margin-left: 50px;
+
+            justify-content: space-between;
+
+        }
+
+        .box:hover {
+            box-shadow: 1px 1px 10px 5px grey;
+
+        }
+
+
+        #img {
+            height: 48%;
+            width: 98%;
+
+            border-radius: 20px;
+            margin-top: 2px;
+            margin-left: 2px;
+            overflow: hidden;
+        }
+
+        #img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+
+        }
+
+        #matter {
+            margin: 10px;
+            height: 48%;
+            width: 95%;
+        }
+
+        .box ul {
+            margin-top: 20px;
+            padding: 0;
+            margin: 0;
+            /* list-style: disc; */
+            padding-left: 20px;
+
+        }
+
+        .button {
+
+            width: 100px;
+            max-width: auto;
+            padding: 5px 10px;
+            background-color: black;
+            border-radius: 5px;
+            margin-left: 25px;
+            margin-top: 30px;
+            cursor: pointer;
+            color: white;
+
+        }
+
+
+
+        #veg {
+            height: 75%;
+            width: 100%;
+            background-color: black;
+            display: flex;
+            align-items: center;
+        }
+
+        #boder {
+            width: 100%;
+            height: 5%;
+            background-color: rgb(9, 182, 153);
+        }
+        
+
+
+        @media (max-width: 600px) {
+            #header {
+                width: auto;
+                height: auto;
+                flex-direction: column;
+                gap: 10px;
+            }
+            #logo{
+                height: auto;
+                width: auto;
+            }
+            .text,#cont,#search{
+                width: auto;
+                justify-content: space-between;
+            }
+            .button{
+                width: 100px;
+            }
+            #fackheader{
+                height: auto;
+                width: auto;
+            }
+             #nav nav{
+                height: auto;
+                width: auto;
+                
+                align-items: center;
+                flex-direction: column;
+            }
+            .box{
+                width: auto;
+                height:auto ;
+                margin-right: 20px;
+                
+            }
+            #img{
+                height: auto;
+                width: auto;
+
+            }
+            #matter{
+                height: auto;
+                width: auto;
+            }
+           
+            #veg,#nonveg{
+                height: auto;
+                width: auto;
+                flex-direction: column;
+                flex-wrap: wrap;
+                gap: 20px;
+                justify-content: center;
+                gap: 20px;
+            }
+            
+
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main">
+        <div id="header">
+            <div id="logo"><img src="https://i.pinimg.com/1200x/45/e1/a5/45e1a5ea831b97a597aa7281d466d9ad.jpg">
+            </div>
+            <div style="display: flex; cursor: pointer;" class="text">
+                <p>About</p>
+                <p><i class="ri-global-line"></i></p>
+            </div>
+            <div style="display: flex;cursor: pointer;" class="text">
+                <P>Menu</P>
+                <p><i class="ri-arrow-down-line"></i></p>
+            </div>
+            <div id="cont" style="cursor: pointer;">
+                <p style="text-align: center;font-weight: lighter;display: ;"><u>contact us</u></p>
+                <p>xxxxxxxxxx</p>
+
+
+            </div>
+            <div id="search" style="cursor: pointer;display: flex;">
+                 
+                <p onclick="toggleSearch()"><i class="ri-search-line"></i></p>
+                <input type="text" placeholder="search food" id="searchbar" style="display: none; border: 2px solid black; background-color: rgb(219, 219, 224);padding: 5px ;">
+            </div>
+            <button onclick="gotologin()">login</button>
+
+        </div>
+        <div id="fackheader"></div>
+        <div id="nav">
+
+            <nav>
+                <p>click here-></p>
+
+                <a href="#nonveg">Non-Veg</a>
+                <a href="#veg">Veg</a>
+            </nav>
+        </div>
+        <div id="nonveg">
+
+            <div class="box">
+                <div id="img"><img src="https://i.pinimg.com/736x/51/b5/2f/51b52f3efb1c3928613573e00c1d0659.jpg"
+                        alt=" shawarma"></div>
+                <div id="matter">
+                    <ul>
+                        <li>khaboos Shawarma</li>
+                        <li>halaal & testy</li>
+                        <li>price: 60/-</li>
+                    </ul>
+                    <div class="button">Orden Now</div>
+                </div>
+
+
+
+            </div>
+            <div class="box">
+                <div id="img"><img src="https://i.pinimg.com/736x/45/71/c6/4571c6f705def874a7ac982be03527e9.jpg"
+                        alt=" shawarma"></div>
+                <div id="matter">
+                    <ul>
+                        <li>Rumali Shawarma</li>
+                        <li>halaal & testy</li>
+                        <li>price: 100/-</li>
+                    </ul>
+                    <div class="button">Orden Now</div>
+                </div>
+            </div>
+            <div class="box">
+                <div id="img"><img src="https://i.pinimg.com/736x/ea/18/51/ea185158272abef722a3850a8f219409.jpg"
+                        alt=" shawarma"></div>
+                <div id="matter">
+                    <ul>
+                        <li>periperi Shawarma </li>
+                        <li>halaal & testy</li>
+                        <li>price: 80/-</li>
+                    </ul>
+                    <div class="button">Orden Now</div>
+                </div>
+            </div>
+            <div class="box">
+                <div id="img"><img src="https://i.pinimg.com/1200x/9f/58/a9/9f58a9fa56ccb15011f7b4f2b4d24ad6.jpg"
+                        alt=" shawarma"></div>
+                <div id="matter">
+                    <ul>
+                        <li>Egg Fried Rice</li>
+                        <li>halaal & testy</li>
+                        <li>price: 120/-</li>
+                    </ul>
+                    <div class="button">Orden Now</div>
+                </div>
+            </div>
+            <div class="box">
+                <div id="img"><img src="https://i.pinimg.com/1200x/91/15/75/9115755892682b9e708a6cfd4dad4cea.jpg"
+                        alt=" shawarma"></div>
+                <div id="matter">
+                    <ul>
+                        <li>Chicken Fried Rice</li>
+                        <li>halaal & testy</li>
+                        <li>price: 120/-</li>
+                    </ul>
+                    <div class="button">Orden Now</div>
+                </div>
+            </div>
+        </div>
+        <div id="veg">
+            <div class="box">
+                <div id="img"><img src="https://i.pinimg.com/736x/62/d7/aa/62d7aa1442c249dab5675b47d31003ff.jpg"
+                        alt=" shawarma"></div>
+                <div id="matter">
+                    <ul>
+                        <li>Veg Potato Shawarma</li>
+                        <li>halaal & testy</li>
+                        <li>price: 60/-</li>
+                    </ul>
+                    <div class="button">Orden Now</div>
+                </div>
+            </div>
+            <div class="box">
+                <div id="img"><img src="https://i.pinimg.com/736x/72/e2/13/72e2136aaf5372c622b14205085b6391.jpg"
+                        alt=" shawarma"></div>
+                <div id="matter">
+                    <ul>
+                        <li>Veg Fried Rice</li>
+                        <li>halaal & testy</li>
+                        <li>price: 120/-</li>
+                    </ul>
+                    <div class="button">Orden Now</div>
+                </div>
+            </div>
+            <div class="box">
+                <div id="img"><img src="https://i.pinimg.com/1200x/b8/b6/fb/b8b6fb69f4a7c1010216a6bd7c8fb255.jpg"
+                        alt=" shawarma"></div>
+                <div id="matter">
+                    <ul>
+                        <li>Gobi fried Rice</li>
+                        <li>halaal & testy</li>
+                        <li>price: 120/-</li>
+                    </ul>
+                    <div class="button">Orden Now</div>
+                </div>
+            </div>
+            <div class="box">
+                <div id="img"><img src="https://i.pinimg.com/736x/8d/8d/d9/8d8dd9c360bd9f50a747457a9cc12621.jpg"
+                        alt=" shawarma"></div>
+                <div id="matter">
+                    <ul>
+                        <li>Gobi Manchuria</li>
+                        <li>halaal & testy</li>
+                        <li>price: 120/-</li>
+                    </ul>
+                    <div class="button">Orden Now</div>
+                </div>
+            </div>
+            <div class="box">
+                <div id="img"><img src="https://i.pinimg.com/736x/76/d4/49/76d4494a8ffcfa86d41a63f9121fda14.jpg"
+                        alt=" shawarma"></div>
+                <div id="matter">
+                    <ul>
+                        <li>Chowmine Noodle</li>
+                        <li>halaal & testy</li>
+                        <li>price: 120/-</li>
+                    </ul>
+                    <div class="button">Orden Now</div>
+                </div>
+            </div>
+
+
+        </div>
+        <div id="boder">
+            <marquee behavior="scroll" direction="left"> WELCOME TO MASHAALLAHA RESTAURENT ........!</marquee>
+        </div>
+
+    </div>
+    <script src="script.js"></script>
+    <!-- <script>
+        const b1 =
+            document.querySelectorAll(".button");
+
+        b1.forEach(function (btn) {
+            btn.addEventListener("click", function () {
+                alert("YUOR ORDER IS PLACED IN 1O MINUTES");
+            });
+        });
+    </script> -->
+</body>
+
+</html>
